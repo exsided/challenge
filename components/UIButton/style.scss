@@ -1,0 +1,42 @@
+.ui-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: unset;
+    outline: unset;
+    background-color: unset;
+    padding: vw(10 30, $desktop);
+    border-radius: 5px;
+    font-size: vw(20, $desktop);
+    font-weight: 700;
+    transition: .2s ease;
+
+    @include mq($tablet) {
+        padding: vw(10 30, $tablet);
+        font-size: vw(20, $tablet);
+    }
+
+    @include mq($mobile) {
+        padding: vw(10 10, $mobile);
+        font-size: vw(16, $mobile);
+    }
+
+    &_color_accent {
+        background-color: $accent-color;
+        color: #ffffff;
+    }
+
+    @include hover {
+        transform: scale(1.1);
+    }
+
+    svg {
+        path {
+            stroke: $white-color;
+        }
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}

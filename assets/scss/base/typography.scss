@@ -1,0 +1,54 @@
+h1 {
+    font-size: vw(60, $desktop);
+    line-height: vw(64, $desktop);
+    margin: 0;
+    color: $accent-color;
+
+    @include mq($tablet) {
+        font-size: vw(48, $tablet);
+        line-height: vw(52, $tablet);
+    }
+
+    @include mq($mobile) {
+        font-size: vw(44, $mobile);
+        line-height: vw(48, $mobile);
+    }
+}
+
+h3 {
+    font-size: vw(32, $desktop);
+    line-height: vw(36, $desktop);
+    margin: 0 0 vw(30, $desktop);
+
+    @include mq($tablet) {
+        font-size: vw(32, $tablet);
+        line-height: vw(36, $tablet);
+        margin-bottom: vw(30, $tablet);
+    }
+
+    @include mq($mobile) {
+        font-size: vw(28, $mobile);
+        line-height: vw(32, $mobile);
+        margin-bottom: vw(20, $mobile);
+    }
+}
+
+p {
+    font-size: vw(20, $desktop);
+    line-height: vw(24, $desktop);
+    margin: 0;
+
+    @include mq($tablet) {
+        font-size: vw(20, $tablet);
+        line-height: vw(24, $tablet);
+    }
+
+    @include mq($mobile) {
+        font-size: vw(20, $mobile);
+        line-height: vw(24, $mobile);
+    }
+}
+
+*::selection {
+    background: $accent-color;
+}

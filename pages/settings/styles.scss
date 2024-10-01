@@ -1,0 +1,44 @@
+.settings-page {
+    &__tasks-list {
+        &:not(:first-of-type) {
+            margin-top: vw(100, $desktop);
+
+            @include mq($tablet) {
+                margin-top: vw(80, $tablet);
+            }
+
+            @include mq($mobile) {
+                margin-top: vw(60, $mobile);
+            }
+        }
+    }
+}
+
+.settings-page-heading {
+    &__add-item-btn {
+        @include mq($mobile) {
+            display: none;
+        }
+    }
+    &__add-item-btn-icon {
+        path {
+            stroke: $white-color;
+        }
+    }
+}
+
+.settings-page-mobile-add-item-btn {
+    display: none;
+
+    @include mq($tablet) {
+        position: fixed;
+        display: flex;
+        bottom: vw(80, $tablet);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @include mq($mobile) {
+        bottom: vw(80, $mobile);
+    }
+}

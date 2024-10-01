@@ -1,0 +1,43 @@
+.default-layout {
+    display: flex;
+    padding-top: vw(60, $desktop);
+    padding-bottom: vw(60, $desktop);
+
+    @include mq($tablet) {
+        padding-top: vw(20, $tablet);
+        padding-bottom: vw(140, $tablet);
+    }
+
+    @include mq($mobile) {
+        padding-top: vw(20, $mobile);
+        padding-bottom: vw(140, $mobile);
+    }
+
+    &__content {
+        padding-left: vw(190, $desktop);
+        flex: 1;
+
+        @include mq($tablet) {
+            padding-left: unset;
+        }
+    }
+
+    &__navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        flex-shrink: 0;
+        height: 100vh;
+        width: vw(180, $desktop);
+
+        @include mq($tablet) {
+            top: unset;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+

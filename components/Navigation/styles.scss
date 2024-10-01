@@ -1,0 +1,98 @@
+.navigation {
+    $base: '.navigation';
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: vw(10, $desktop);
+    padding: vw(15, $desktop);
+    border-right: 1px solid $white-color;
+    z-index: 50;
+
+    @include mq($tablet) {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: unset;
+        border-top: 1px solid $white-color;
+        border-right: unset;
+        background-color: $black-color;
+        padding: vw(10, $tablet);
+    }
+
+    @include mq($mobile) {
+        @include box(vw(20, $mobile));
+        padding: vw(10, $mobile);
+    }
+
+    &__action {
+        --navigation-accent-color: #{$white-color};
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include box(vw(150, $desktop));
+        cursor: pointer;
+        border: 1px solid var(--navigation-accent-color);
+        border-radius: 5px;
+        transition: .2s ease;
+
+        &_logout {
+            margin-top: auto;
+            border: unset;
+
+            @include mq($tablet) {
+                border: 1px solid var(--navigation-accent-color);
+            }
+        }
+
+        @include hover {
+            --navigation-accent-color: #{$accent-color};
+            transform: scale(0.9);
+
+            #{$base}__action-icon {
+                transform: scale(1.2);
+            }
+        }
+
+        @include mq($tablet) {
+            @include box(vw(36, $tablet));
+        }
+
+        @include mq($mobile) {
+            @include box(vw(36, $mobile));
+        }
+    }
+
+    &__spacer {
+        margin-bottom: auto;
+
+        @include mq($tablet) {
+            display: none;
+        }
+    }
+
+    &__action-icon {
+        transition: .2s ease;
+        width: vw(40, $desktop);
+
+        @include mq($tablet) {
+            @include box(vw(20, $tablet));
+        }
+
+        @include mq($mobile) {
+            @include box(vw(20, $mobile));
+        }
+
+        &_icon_settings {
+            path {
+                fill: var(--navigation-accent-color);
+            }
+        }
+
+        &_icon_user, &_icon_message, &_icon_logout {
+            path {
+                stroke: var(--navigation-accent-color);
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.task-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    &__field {
+        width: 100%;
+    }
+
+    &__submit-btn {
+        margin: vw(30, $desktop) 0 auto;
+
+        @include mq($tablet) {
+            margin-top: vw(30, $tablet);
+        }
+
+        @include mq($mobile) {
+            margin-top: vw(30, $mobile);
+        }
+    }
+
+    &__loader-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        filter: blur(1px);
+        cursor: progress;
+    }
+
+    &__loader {
+        @include box(vw(40, $desktop));
+
+        @include mq($tablet) {
+            @include box(vw(40, $tablet));
+        }
+
+        @include mq($mobile) {
+            @include box(vw(40, $mobile));
+        }
+    }
+}

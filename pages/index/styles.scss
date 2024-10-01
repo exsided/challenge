@@ -1,0 +1,15 @@
+.index-page {
+    &__tasks-list {
+        &:not(:first-of-type) {
+            margin-top: vw(100, $desktop);
+
+            @include mq($tablet) {
+                margin-top: vw(80, $tablet);
+            }
+
+            @include mq($mobile) {
+                margin-top: vw(60, $mobile);
+            }
+        }
+    }
+}

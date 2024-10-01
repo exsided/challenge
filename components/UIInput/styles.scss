@@ -1,0 +1,168 @@
+.ui-input {
+    $base: '.ui-input';
+
+    position: relative;
+    display: block;
+    margin-bottom: vw(6, $desktop);
+
+    @include mq($tablet) {
+        margin-bottom: vw(6, $tablet);
+    }
+
+    @include mq($mobile) {
+        margin-bottom: vw(6, $mobile);
+    }
+
+    &--with-label {
+        #{$base}__field {
+            padding-top: vw(24, $desktop);
+
+            @include mq($tablet) {
+                padding-top: vw(24, $tablet);
+            }
+
+            @include mq($mobile) {
+                padding-top: vw(24, $mobile);
+            }
+        }
+    }
+
+    &_error {
+        animation: shake 0.2s ease-in-out 0s 2;
+
+        #{$base}__field {
+            border-color: $danger-color;
+            color: $danger-color;
+
+            &::placeholder {
+                color: $danger-color;
+            }
+
+            &:not(:disabled) {
+                &:focus, &:hover {
+                    border-color: $danger-color;
+                }
+            }
+        }
+
+        #{$base}__label {
+            color: $danger-color;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: vw(30, $desktop);
+        left: 0;
+        transform: translateY(-50%);
+        font-size: vw(13, $desktop);
+        line-height: vw(18, $desktop);
+        color: $white-color;
+        transition: .2s ease;
+
+
+        @include mq($tablet) {
+            top: vw(25, $tablet);
+            font-size: vw(13, $tablet);
+            line-height: vw(18, $tablet);
+        }
+
+        @include mq($mobile) {
+            top: vw(25, $mobile);
+            font-size: vw(13, $mobile);
+            line-height: vw(18, $mobile);
+        }
+    }
+
+    &__field:focus ~ &__label, &_on-top &__label {
+        font-size: vw(11, $desktop);
+        line-height: vw(14, $desktop);
+        margin-top: vw(-20, $desktop);
+
+        @include mq($tablet) {
+            font-size: vw(11, $tablet);
+            line-height: vw(14, $tablet);
+            margin-top: vw(-20, $tablet);
+        }
+
+        @include mq($mobile) {
+            font-size: vw(11, $mobile);
+            line-height: vw(14, $mobile);
+            margin-top: vw(-20, $mobile);
+        }
+    }
+
+    &__field {
+        font-weight: 600;
+        font-size: vw(16, $desktop);
+        line-height: vw(18, $desktop);
+        color: $white-color;
+        height: vw(46, $desktop);
+        padding: vw(14 20 5 0, $desktop);
+        background-color: unset;
+        width: 100%;
+        transition: .2s ease;
+        box-sizing: border-box;
+        border: unset;
+        border-bottom: 1px solid $white-color;
+
+        @include mq($tablet) {
+            font-size: vw(16, $tablet);
+            line-height: vw(18, $tablet);
+            height: vw(46, $tablet);
+            padding: vw(14 20 5 0, $tablet);
+        }
+
+        @include mq($mobile) {
+            font-size: vw(16, $mobile);
+            line-height: vw(18, $mobile);
+            height: vw(46, $mobile);
+            padding: vw(14 20 5 0, $mobile);
+        }
+
+        &:not(:disabled) {
+            &:focus, &:hover {
+                outline: unset;
+                border-color: $accent-color;
+            }
+        }
+    }
+
+    &__error-icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        @include box(vw(20, $desktop));
+
+        @include mq($tablet) {
+            @include box(vw(20, $tablet));
+        }
+
+        @include mq($mobile) {
+            @include box(vw(20, $mobile));
+        }
+
+        path {
+            fill: $danger-color
+        }
+    }
+
+    &__error {
+        display: flex;
+        padding-top: 2px;
+        font-size: vw(9, $desktop);
+        line-height: vw(10, $desktop);
+        color: $danger-color;
+
+        @include mq($tablet) {
+            font-size: vw(9, $tablet);
+            line-height: vw(10, $tablet);
+        }
+
+        @include mq($mobile) {
+            font-size: vw(9, $mobile);
+            line-height: vw(10, $mobile);
+        }
+    }
+}

@@ -1,0 +1,76 @@
+.breadcrumbs {
+    $base: '.breadcrumbs';
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin: vw(20, $desktop) 0;
+
+    @include mq($tablet) {
+        margin-top: vw(20, $tablet);
+        margin-bottom: vw(20, $tablet);
+    }
+
+    @include mq($mobile) {
+        margin-top: vw(20, $mobile);
+        margin-bottom: vw(20, $mobile);
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        list-style: unset;
+
+        &:not(:last-of-type) {
+            &:after {
+                content: '';
+                display: block;
+                position: static;
+                height: vw(20, $desktop);
+                width: 1px;
+                background-color: $white-color;
+                margin: 0 vw(10, $desktop);
+
+                @include mq($tablet) {
+                    height: vw(20, $tablet);
+                    margin: 0 vw(10, $tablet);
+                }
+
+                @include mq($mobile) {
+                    height: vw(20, $mobile);
+                    margin: 0 vw(10, $mobile);
+                }
+            }
+        }
+    }
+
+    &__list-item-text {
+        white-space: nowrap;
+        font-size: vw(16, $desktop);
+        line-height: vw(18, $desktop);
+        text-decoration: unset;
+        color: $white-color;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        @include mq($tablet) {
+            font-size: vw(14, $tablet);
+            line-height: vw(16, $tablet);
+        }
+
+        @include mq($mobile) {
+            font-size: vw(14, $mobile);
+            line-height: vw(16, $mobile);
+        }
+
+        &_is-link {
+            position: relative;
+            transition: .2s ease;
+
+            @include hover {
+                color: $accent-color;
+            }
+        }
+    }
+}
